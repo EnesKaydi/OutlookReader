@@ -1,11 +1,11 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Outlook Mail Search";
+    ViewData["Title"] = "Outlook Mail Search ";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Outlook Mail Search</h1>
+    <h1 class="display-4">Outlook Mail Search Project</h1>
     <p>Select a .pst file and search for emails.</p>
 </div>
 
@@ -13,7 +13,7 @@
     <div class="col-md-8 offset-md-2">
         <form method="post" enctype="multipart/form-data">
             <div class="mb-3">
-                <label for="pstFile" class="form-label">Select Outlook Data File (.pst)</label>
+                <label for="pstFile" class="form-label"> Select Outlook Data File (.pst)</label>
                 <input class="form-control" type="file" name="pstFile" id="pstFile" accept=".pst" required>
             </div>
             
@@ -21,11 +21,11 @@
                 <legend>Search Criteria</legend>
                 <div class="mb-3">
                     <label for="sender" class="form-label">From</label>
-                    <input type="text" name="sender" id="sender" class="form-control" placeholder="e.g., john.doe@example.com" />
+                    <input type="text" name="sender" id="sender" class="form-control" placeholder="example, enes.kaydi@gmail.com" />
                 </div>
                 <div class="mb-3">
                     <label for="content" class="form-label">Content</label>
-                    <input type="text" name="content" id="content" class="form-control" placeholder="e.g., 'report' or 'meeting'" />
+                    <input type="text" name="content" id="content" class="form-control" placeholder="example, 'report' or 'meeting'" />
                 </div>
             </fieldset>
 
