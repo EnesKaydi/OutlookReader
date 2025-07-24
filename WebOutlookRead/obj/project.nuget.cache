@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "B2pbvPiJvP0=",
+  "success": true,
+  "projectFilePath": "/Users/muhammedeneskaydi/RiderProjects/WebOutlookRead/WebOutlookRead/WebOutlookRead.csproj",
+  "expectedPackageFiles": [
+    "/Users/muhammedeneskaydi/.nuget/packages/pstparse/1.3.2/pstparse.1.3.2.nupkg.sha512"
+  ],
+  "logs": []
+}

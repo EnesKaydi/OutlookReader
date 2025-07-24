@@ -1,0 +1,70 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Outlook Mail Search";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Outlook Mail Search</h1>
+    <p>Select a .pst file and search for emails.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="pstFile" class="form-label">Select Outlook Data File (.pst)</label>
+                <input class="form-control" type="file" name="pstFile" id="pstFile" accept=".pst" required>
+            </div>
+            
+            <fieldset>
+                <legend>Search Criteria</legend>
+                <div class="mb-3">
+                    <label for="sender" class="form-label">From</label>
+                    <input type="text" name="sender" id="sender" class="form-control" placeholder="e.g., john.doe@example.com" />
+                </div>
+                <div class="mb-3">
+                    <label for="content" class="form-label">Content</label>
+                    <input type="text" name="content" id="content" class="form-control" placeholder="e.g., 'report' or 'meeting'" />
+                </div>
+            </fieldset>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Search Emails</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (Model.SearchResults.Any())
+{
+    <hr />
+    <h2 class="text-center">Search Results</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Subject</th>
+                        <th>Body Preview</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var email in Model.SearchResults)
+                    {
+                        <tr>
+                            <td>@email.SentDate?.ToString("g")</td>
+                            <td>@email.From</td>
+                            <td>@email.To</td>
+                            <td>@email.Subject</td>
+                            <td>@(email.Body?.Length > 100 ? email.Body.Substring(0, 100) + "..." : email.Body)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
